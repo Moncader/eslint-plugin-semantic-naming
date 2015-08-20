@@ -1,0 +1,25 @@
+{
+  "name": "eslint-plugin-semantic-naming",
+  "version": "1.0.0",
+  "description": "eslint rule for a semantic naming convention",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/lib/rules/"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "lint",
+    "naming",
+    "convention"
+  ],
+  "author": "Jason Parrott",
+  "license": "Zlib",
+  "peerDependencies": {
+    "eslint": ">=0.8.0"
+  },
+  "devDependencies": {
+    "eslint-tester": "^0.6.0",
+    "mocha": "^2.2.5"
+  }
+}
