@@ -1,0 +1,4 @@
+plugins:
+  - "semantic-naming"
+rules:
+  semantic-naming/semantic-naming: [2, {"whitelist": ["global"]}],

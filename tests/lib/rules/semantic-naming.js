@@ -1,11 +1,11 @@
 'use strict';
 
+var rule = require('../../../lib/rules/semantic-naming');
 var eslint = require("eslint").linter;
-var ESLintTester = require("eslint-tester");
+var RuleTester = require("eslint").RuleTester;
 
-var tEslintTester = new ESLintTester(eslint);
-
-tEslintTester.addRuleTest('lib/rules/semantic-naming', {
+var tTester = new RuleTester(eslint);
+tTester.run('semantic-naming', rule, {
   valid: [
     // Parameters
     'function foo(pArg1, pArg2) {}',
@@ -21,7 +21,25 @@ tEslintTester.addRuleTest('lib/rules/semantic-naming', {
     'var MY_CONSTANT_123 = 23;',
 
     // Counters
-    'var i, il;'
+    'var i, il;',
+
+    // Whitelisted
+    {
+      code: 'function foo(pArg1, global) {}',
+      options: [{whitelist: ['global']}]
+    },
+    {
+      code: 'function foo() {var global = 1;}',
+      options: [{whitelist: ['global']}]
+    },
+    {
+      code: 'function foo() {var global = 1;function bar(){console.log(global);}}',
+      options: [{whitelist: ['global']}]
+    },
+    {
+      code: 'var global = 1;',
+      options: [{whitelist: ['global']}]
+    }
   ],
 
   invalid: [

@@ -3,6 +3,8 @@ module.exports = {
     'semantic-naming': require('./lib/rules/semantic-naming')
   },
   rulesConfig: {
-    'semantic-naming': [2]
+    'semantic-naming': [2, {
+      whitelist: []
+    }],
   }
 };
