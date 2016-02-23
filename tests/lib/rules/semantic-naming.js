@@ -68,7 +68,7 @@ tTester.run('semantic-naming', rule, {
     // Members
     {
       code: 'var tFoo = 1;var tHello = tFoo;function test() {var tBar = tFoo;}',
-      errors: [{message: "Member 'tFoo' must be prefixed with 'm'"}]
+      errors: [{message: "Member or Closure Variable 'tFoo' must be prefixed with 'm or c'"}]
     },
 
     // Locals

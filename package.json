@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-semantic-naming",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "eslint rule for a semantic naming convention",
   "main": "index.js",
   "repository": {
